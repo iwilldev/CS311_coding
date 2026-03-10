@@ -1,0 +1,11 @@
+a,b,c,d,e,f,g,h,i
+a,i,8
+a,c,3
+i,f,1
+c,d,1
+b,d,1
+c,g,2
+h,e,5
+d,f,6
+e,i,3
+a,b,1
