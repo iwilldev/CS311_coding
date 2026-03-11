@@ -1,3 +1,6 @@
+# WeightedGraphTester.py
+# Written by Alex Barbee
+
 import WeightedGraph as wg
 import pandas as pd
 
@@ -8,11 +11,13 @@ testMatrix2 = wg.WeightedGraph("example2.txt")
 
 
 #tests the getWeight function
+#@return: void
 def weightTest(i,k,exp,mtx):
     ret = mtx.getWeight(i,k)
     print(f"getWeight({i},{k}) returns: {ret}   expected: {exp}\n")
 
 #creates LaTeX output using the Panda Dataframe
+#@return: string containing LaTeX data
 def makeLatex(mtx):
     table = pd.DataFrame(mtx.matrix, columns=list("".join(mtx.names)))
     table.insert(loc=0, column="", value=mtx.names)
@@ -21,6 +26,7 @@ def makeLatex(mtx):
     return latex_out
 
 #Prints in depth tests of matrices
+#@return: void
 def printSpecifics(theMatrix,showtex):
     print("***** Printing matricies *****")
     print(theMatrix.matrix)
