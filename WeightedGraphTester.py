@@ -29,6 +29,20 @@ def makeLatex(mtx):
 #@return: void
 def printSpecifics(theMatrix,showtex):
     print("***** Printing matricies *****")
+    shp = theMatrix.matrix.shape
+
+
+    print("getWeight test:")
+    print("Actual:")
+    
+    for i in range(shp[0]):
+        print('[',end="")
+        for j in range(shp[1]):
+            weight = theMatrix.getWeight(i,j)
+            print(f"{weight:>3}",end="")
+        print(']')
+
+    print("Expected:")
     print(theMatrix.matrix)
 
     if showtex:
@@ -48,9 +62,9 @@ weightTest(0,0,0,testMatrix)
 weightTest(0,1,4,testMatrix)
 weightTest(5,3,6,testMatrix)
 
-printSpecifics(testMatrix,True)
+printSpecifics(testMatrix,False)
 print("\n\nUSER-MADE MATRIX 1 TESTING:\n\n")
 weightTest(0,0,0,testMatrix2)
 weightTest(0,1,1,testMatrix2)
 weightTest(5,3,6,testMatrix2)
-printSpecifics(testMatrix2,True)
+printSpecifics(testMatrix2,False)
