@@ -5,13 +5,11 @@ import numpy as np
 
 class WeightedGraph:
     def __init__(self, fname):
-        __fileName__ = fname
-
-        __fObj__ = open(__fileName__)
+        fObj = open(fname)
 
         # read the line, strip newline character, split into a list
         # and pass into arrray initializer
-        self.names = np.array(__fObj__.readline().strip().split(',') )
+        self.names = np.array(fObj.readline().strip().split(',') )
 
         # just stores the size as an integer
         # so we don't call functions needlessly
@@ -25,7 +23,7 @@ class WeightedGraph:
             self.matrix[ndx,ndx] = 0
 
         #Matrix setup code
-        for line in __fObj__:
+        for line in fObj:
             
             # split line into array
             dat = line.strip().split(',')
@@ -42,7 +40,7 @@ class WeightedGraph:
             self.matrix[yPos,xPos] = eWeight
 
         # Close file after working with it
-        __fObj__.close()
+        fObj.close()
 
     # Calculates the weight of the edge between nodes
     # @i and @k, and results in -1 if they do not exist
@@ -66,4 +64,4 @@ class WeightedGraph:
     # Gets the current number of nodes in the graph
     # @return an integer count of nodes
     def getSize(self):
-        return ((self.matrix > 0 ).sum())/2
+        return len(self.names)
