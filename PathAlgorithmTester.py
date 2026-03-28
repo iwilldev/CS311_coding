@@ -12,3 +12,8 @@ testMatrix2 = wg.WeightedGraph("example2.txt")
 
 
 print(prim(testMatrix))
+
+
+'''
+print("***** Testing Prim *****")
+'''
