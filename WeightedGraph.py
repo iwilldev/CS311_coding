@@ -33,7 +33,7 @@ class WeightedGraph:
             yPos = np.where(self.names == dat[1])[0][0]
             
             # store the weight in a variable
-            eWeight = dat[2]
+            eWeight = int(dat[2])
 
             # set the values in the array for connected nodes
             self.matrix[xPos,yPos] = eWeight
